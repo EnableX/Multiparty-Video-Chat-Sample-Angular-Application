@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 })
 export class ApiService {
 
-  private BASE_API_URL = environment.baseApiURL;
+  private BASE_API_URL = '';
   private username: string = 'demo';
   private password: string = 'enablex';
   

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host=vc-imtiyaz.vcloudx.com --disable-host-check --ssl --ssl-key /opt/vcloudx/etc/sslcerts/vcloudx.y --ssl-cert /opt/vcloudx/etc/sslcerts/vcloudx.crt",
+    "start": "ng serve --ssl --proxy-config proxy.config.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
