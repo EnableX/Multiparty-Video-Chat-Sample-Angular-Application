@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  baseApiURL: 'https://vc-imtiyaz.vcloudx.com:5000/',
+  baseApiURL: '',
   recaptcha: {
-    siteKey: '6Ld2HKAdAAAAAJ_OmZtkG34OPQ51JxHV-VC1bfHb'
+    siteKey: ''
   }
 };
 
