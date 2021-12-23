@@ -1,0 +1,121 @@
+<header>
+    <!-- =================================================== Nav section ============================-->
+    <div id="app" class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand">
+                <img src="assets/img/logo.png">
+            </a>
+            <div class="navbar-collapse collapse nav justify-content-end">
+                <ul class="nav justify-content-end ton-hedr-nav">
+                    <li class="nav-item">
+
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center" style="position: relative; top: 0px;">
+        <div class="col-12 col-md-12 col-xl-6 col-lg-6 form-hedding">
+            <h1>Try a Video Conference</h1>
+            <p>You can try our Platform with a Video Conference in a small group of 6 people for 15 minutes. Follow
+                to steps to get started easily: </p>
+            <p> 1. Submit the given form </p>
+            <p> 2. Once connected, click "Invite URL" to copy the URL to share with others</p>
+            <p>&nbsp; <br></p>
+            <h4>Tech Specs</h4>
+            <p>
+                <strong>Web Toolkit: </strong> v<span id="version_num">{{version_num}}</span> <br>
+                <strong>Client Application:</strong> HTML5, CSS, JavaScript <br>
+                <strong>Application Server:</strong> NodeJS
+            </p>
+        </div>
+        <div class="col-12 col-md-12 col-xl-5 col-lg-5 offset-md-1">
+            <div class="form-bg" style="display: block;padding-bottom: 25px;">
+                <h2 class="text-center">Get started</h2>
+                <div style="display: none;" class="loading text-center">Loading....</div>
+                <form class="mt-4" id="login_form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <input type="text" class="form-control" id="nameText" name="nameText" placeholder="Name"
+                                required formControlName="nameText" [ngClass]="{ 'is-invalid': submitted && f['nameText'].errors }">
+                            <div *ngIf="submitted && f['nameText'].errors" class="invalid-feedback">
+                              <div *ngIf="f['nameText'].errors['required']">Name is required</div>
+                              <div *ngIf="f['nameText'].errors['noWhiteSpace']">White and empty spaces are not allowed</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row" style="display: none;">
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control" id="roomName" name="roomName"
+                                placeholder="Room ID" required>
+                        </div>
+                    </div>
+                    <div class="form-row" style="display: none;">
+                        <div class="form-group col-md-12">
+                            <select class="selectpicker show-menu-arrow form-control" id="attendeeRole"
+                                name="attendeeRole" required>
+                                <option value="participant">Join as Participant</option>
+                                <option value="moderator">Join as Moderator</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row" style="display: none;">
+                        <div class="form-group col-md-12">
+                            <input type="checkbox" name="agree" style="height: 15px;width:15px;" checked required>
+                            <label>I
+                                agree to <a target="_blank" href="https://www.enablex.io/legals/tou/">Terms of
+                                    Use</a> and <a target="_blank"
+                                    href="https://www.enablex.io/legals/privacy-policy/">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row text-center">
+
+                        <!-- Add the sitekey in data-sitekey attribute here -->
+                        <div class="form-group col-12">
+
+                            <div #recaptcha ></div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row justify-content-start">
+                        <div class="form-group col-12 checkbox-sec">
+                            <div>
+                                <div>
+                                    <input type="submit" value="Connect" class="btn btn-primary" id="joinRoom" disabled
+                                    >
+                                </div>
+                                <div id="create_room_div" style="display: none;">
+                                    <hr>
+                                    <p class="text-center"> Don't have a Room-ID?
+                                        <a href="javascript:void(0)" id="create_room">Create One</a>
+                                    </p>
+                                </div>
+                                <br>
+                                <span id="message" style="color: red"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <ul class="footerUl">
+                    <li><a href="https://www.enablex.io/legals/tou/">Terms</a></li>
+                    <li><a href="https://www.enablex.io/legals/privacy-policy/">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="footer-p">Copyright © VCLOUDX PTE LTD. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>

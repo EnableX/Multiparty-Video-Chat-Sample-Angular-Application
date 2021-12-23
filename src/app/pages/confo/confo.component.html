@@ -1,0 +1,433 @@
+<div class="custom-multi-app-inner">
+    <div class="custom-app-wrapper">
+        <div class="inner">
+            <div class="top-section">
+                <div class="room-logo">
+                    <img src="assets/img/logo.png" alt="Enablex">
+                    <div class="room-name">
+                        <h4></h4>
+                    </div>
+                </div>
+
+                <div class="recording-blink"
+                    style="margin: auto; font-size: x-large; visibility: hidden; position: absolute; right: 0px;">
+                    <div id="rec_notification-1" class="blink-image">
+                        <span><i class="fa fa-circle" style="color: red;"></i></span> Rec
+                    </div>
+                </div>
+                <div class="left-icons-tools">
+                    <div class="tools-inner">
+                        <ul>
+                            <li class="chat-btn" title="Chat">
+                                <a>
+                                    <svg id="black_chat" viewBox="0 0 24 24" width="24" height="24"
+                                        stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" class="css-i6dzq1">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                        </path>
+                                    </svg>
+                                    <svg id="red_chat" viewBox="0 0 24 24" width="24" height="24" stroke="red"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        class="css-i6dzq1" style="display: none;">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="participant-btn" title="Participants">
+                                <a>
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        class="css-i6dzq1">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="media-stats" onclick="showMediaStats();" title="Media Stats">
+                                <a>
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        class="css-i6dzq1">
+                                        <line x1="12" y1="20" x2="12" y2="10"></line>
+                                        <line x1="18" y1="20" x2="18" y2="4"></line>
+                                        <line x1="6" y1="20" x2="6" y2="16"></line>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="media-stats" title="Co-Browsing" id="co_browsing_button_parent" style="display: none;">
+                                <a>
+                                    <button id="myBtn" class="co_browsing_button">
+                                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                            stroke-width="2" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round" class="css-i6dzq1">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                    </button>
+
+                                    <!-- The Modal -->
+                                    <div id="myModal" class="modal">
+
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <h4 class="modal-title">Choose Cobrowsing Link</h4>
+                                            <div class="modal-body">
+                                                <select name="cobrowse" id="cobrowse_urls" style="font-size: 20px; 
+                                                color: black;">
+                                                    
+                                                </select>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <!-- <button type="button" class="btn btn-default" data-target="#myModal">Submit</button> -->
+                                                <button type="button" class="btn btn-default" data-dismiss="modal"
+                                                    id="submit" onclick="startCobrowsing()">Submit</button>
+                                                <button type="button" class="btn btn-default" id="close_btn"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- <button type="button" id="myBtn" class="co_browsing_button" data-toggle="modal"
+                                        data-target="#myModal">
+                                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                            stroke-width="2" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round" class="css-i6dzq1">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <div class="modal fade" id="myModal" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Choose Cobrowsing Link</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <select name="cobrowse" id="cobrowse_urls" style="font-size: 20px; 
+                                                    color: black;">
+                                                        <option value="https://meet.vcloudx.com">
+                                                            https://meet.vcloudx.com</option>
+                                                    </select>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal" id="submit"
+                                                        onclick="startCobrowsing()">Submit</button>
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div> -->
+                                </a>
+                            </li>
+
+
+                            <!-- <li id="switch_cam" title="Change camera"
+                                style="display: none;" onclick="changeCamera()">
+                                <a>
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        class="css-i6dzq1">
+                                        <path
+                                            d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                                        </path>
+                                        <circle cx="12" cy="13" r="4"></circle>
+                                    </svg>
+                                </a>
+                            </li> -->
+                            <li class="settings-btn" id="switch_devices" title="Settings">
+                                <a>
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        class="css-i6dzq1">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path
+                                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="screen-area">
+                    <div class="screen-inner" id="screen_share">
+                    </div>
+                </div>
+                <div class="video-area">
+                    <div class="row-fluid custom1">
+                        <div class="video-item item1">
+                            <div class="video-inner" id="self-view">
+
+                            </div>
+                            <div class="video-caption" style="display: none;">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                    class="css-i6dzq1" id="unmute-audio-small">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                                </svg>
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                    class="css-i6dzq1" id="mute-audio-small" style="display: none;">
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    <path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path>
+                                    <path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                                </svg>
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                    class="css-i6dzq1" id="unmute-video-small">
+                                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                    class="css-i6dzq1" style="display: none;" id="mute-video-small">
+                                    <path
+                                        d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10">
+                                    </path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-item item2 remote-view-parent" style="display:none">
+                            <!-- <div class="video-item item2 remote-view-parent"> -->
+                            <div class="spotlight" style="position:absolute; right: 0; z-index:10000;">
+
+                            </div>
+                            <div class="video-inner video-inner-parent">
+                            </div>
+                            <div class="video-caption">
+                                <p>Alma Llogd</p>
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                    class="css-i6dzq1">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                                </svg>
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                    class="css-i6dzq1">
+                                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="call-disconnect" title="End Call" (click)="disconnectCall()">
+                            <a>
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                    stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                    class="css-i6dzq1"
+                                    style="transform: rotate(135deg);fill: #ff001d;stroke-width: 0;">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                                <span>Leave</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="chat-area" style="z-index: 5020;">
+                    <div class="chat-head">
+                        <h2>Live Chat</h2>
+                        <div class="close-icon" onclick="closeArea();"><span></span><span></span></div>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-textarea">
+                            <div class="chat-item left" style="display: none;">
+                                <div class="img">
+                                    <img src="assets/img/user.png" alt="User">
+                                </div>
+                                <div class="desc">
+                                    <div class="head">
+                                        <p>Marvin Lambert</p>
+                                    </div>
+                                    <div class="message">
+                                        <p>Hi Team 🙂</p>
+                                    </div>
+                                    <div class="time" style="font-size: smaller;">
+                                        <p>12:25 pm</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-item right" style="display: none;">
+                                <div class="desc">
+                                    <div class="head">
+                                        <p>Alma Llogd</p>
+                                    </div>
+                                    <div class="message">
+                                        <p>Hi Everyone! Let get Started.
+                                        </p>
+                                    </div>
+                                    <div class="time" style="font-size: smaller;">
+                                        <p>12:25 pm</p>
+                                    </div>
+                                </div>
+                                <div class="img">
+                                    <img src="assets/img/user.png" alt="User">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-footer">
+                        <div class="chat-typing-area">
+                            <div class="message-box">
+                                <textarea type="text" class="message-input"
+                                    placeholder="Type your message"></textarea>
+                                <button type="submit" class="message-submit" onclick="chatSend()">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        class="css-i6dzq1">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                                <label title="Choose File" for="file_upload_public"
+                                    class="d-inline text-secondary pointer">
+
+                                    <svg class="message-submit" viewBox="0 0 24 24" width="27" height="23"
+                                        stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48">
+                                        </path>
+                                    </svg>
+
+                                </label>
+                                <input type="file" class="file-input" name="file_upload" id="file_upload_public">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="participants-area" style="z-index: 5020;">
+                    <div class="chat-head">
+                        <h2>Participants List</h2>
+                        <div class="close-icon" onclick="closeArea();"><span></span><span></span></div>
+                    </div>
+                    <div class="participants-inner">
+                        <div class="participants-item" style="display: none;">
+                            <!-- <div class="participant-img">
+                                <img src="images/user.jpeg" alt="User">
+                            </div> -->
+                            <div class="participant-desc">
+                                <div class="head">
+                                    <p>Marvin Lambert</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="participants-item" style="justify-content: space-evenly" *ngFor="let participant of participants">
+                            <div class="participant-desc">
+                                <div class="head" id="user_{{participant.clientId}}">
+                                    <p>{{participant.name}}</p>
+                                </div>
+                            </div>
+                            <div style="display:flex">
+                                <svg *ngIf="!participant.audioMuted" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" id="unmute-audio-list-{{participant.clientId}}" class="css-i6dzq1">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                                </svg>
+                                <svg *ngIf="participant.audioMuted" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" id="mute-audio-list-{{participant.clientId}}" class="css-i6dzq1">
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    <path d = "M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path>
+                                    <path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                                </svg>
+                                <svg *ngIf="!participant.videoMuted" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" id="unmute-video-list-{{participant.clientId}}" class="css-i6dzq1">
+                                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                                <svg *ngIf="participant.videoMuted" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" id="mute-video-list-{{participant.clientId}}" class="css-i6dzq1"> 
+                                    <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10"></path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="settings-area" style="z-index: 5020;">
+                    <div class="chat-head">
+                        <h2>Device List</h2>
+                        <div class="close-icon" onclick="closeArea();"><span></span><span></span></div>
+                    </div>
+                    <div class="settings-inner">
+                        <div class="camera-item" style="flex-direction: column;">
+                            <!-- <div class="participant-img">
+                                <img src="images/user.jpeg" alt="User">
+                            </div> -->
+                            <h5>Camera List</h5>
+                            <div class="participant-desc camera-desc">
+                                <div class="head">
+                                    <div  class="devices" *ngFor="let cam of camList">
+                                        <input type="radio" id="{{cam.deviceId}}" name="camera" value="{{cam.label}}" (click)="switchcam(cam)"> <label for="{{cam.deviceId}}">{{cam.label}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="participants-item microphone-item" style="flex-direction: column;">
+                            <!-- <div class="participant-img">
+                                <img src="images/user.jpeg" alt="User">
+                            </div> -->
+                            <div>
+                                <h5>Microphone List</h5>
+                            </div>
+                            <div class="participant-desc microphone-desc">
+                                <div class="head">
+                                    <div class="devices" *ngFor="let mic of miclist">
+                                        <input type="radio" id="{{mic.deviceId}}" name="mic" value="{{mic.label}}" (click)="switchmic(mic)"> <label for="{{mic.deviceId}}">{{mic.label}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="bottom-btns">
+                <ul>
+                    <li class="cm-btn first-btn"><a>1</a></li>
+                    <li class="cm-btn second-btn"><a>2</a></li>
+                    <li class="cm-btn third-btn"><a>3</a></li>
+                    <li class="cm-btn fourth-btn"><a>4</a></li>
+                    <li class="cm-btn fifth-btn"><a>5</a></li>
+                    <li class="cm-btn sixth-btn"><a>6</a></li>
+                </ul>
+            </div> -->
+                
+            <app-toolbar></app-toolbar>
+            </div>
+        </div>
+    </div>
+</div>
