@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       nameText: ['', [Validators.required, WhiteSpaceValidator.noWhiteSpace]]
     });
 
-    this.addRecaptchaScript();
+    //this.addRecaptchaScript();
 
     toastr.options.positionClass = 'toast-top-right';
 
