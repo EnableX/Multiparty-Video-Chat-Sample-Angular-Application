@@ -1,20 +1,30 @@
-# Multiparty Video Calling Application using Angular (JS Framework) and EnableX Toolkit for Web
+# Build a Multiparty Video Calling Application with Angular: EnableX Toolkit for Web Integration Guide
 
-This is a sample multiparty video calling client application written in Angular that allows developers to implement video calling capabilities in their websites. The application runs on the web browsers (referred as client end point) and utilizes EnableX Web SDK to conduct an RTC session with its peers through EnableX Video Services. 
+Creating a Multiparty Video Calling Application with Angular and EnableX Toolkit for Web
 
-The client application performs the following tasks to facilitate an RTC session: 
+In this guide, we'll walk you through building a multiparty video calling client application using Angular, a popular JavaScript framework. We'll leverage the power of the EnableX Toolkit for Web to enable real-time video calling within your website. This application runs seamlessly on web browsers and utilizes the EnableX Web SDK for establishing and managing RTC (Real-Time Communication) sessions via the EnableX Video Services platform.
 
-* Get token from the application server 
-* Connect to the room using the token 
-* Publish audio/video streams in the room 
-* Subscribe to remote audio/video streams in the room 
-* Listen to any session related events
+Here's a breakdown of what this client application accomplishes:
 
-This sample client application also demonstrates the following features:
+1. Token Acquisition: It retrieves a secure token from your application server, which is essential for accessing the EnableX Video Services.
 
-* Mute/Unmute video 
-* Mute/Unmute audio 
-* Disconnect
+2. Room Connection: The application establishes a connection to a designated room using the obtained token, enabling users to join a video conference.
+
+3. Audio/Video Publishing: Users can share their audio and video streams within the room, allowing for dynamic and interactive video conversations.
+
+4. Remote Stream Subscription: It enables participants to subscribe to remote audio and video streams shared by other participants in the room.
+
+5. Session Event Handling: The application listens to various session-related events, ensuring a smooth and reliable video calling experience.
+
+Moreover, this sample client application showcases the following user-friendly features:
+
+Video Mute/Unmute: Users can easily toggle their video feed on or off during the call.
+
+Audio Mute/Unmute: Participants can mute or unmute their audio to control their presence in the conversation.
+
+Disconnect: It provides a seamless way to leave the video call when needed.
+
+By implementing this solution, you can enhance your website with multiparty video calling capabilities, offering a rich and engaging user experience for real-time communication.
 
 ## 1 Get Started
 
