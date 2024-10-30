@@ -32,15 +32,15 @@ By implementing this solution, you can enhance your website with multiparty vide
 
 #### 1.1.1 App Id and App Key
 
-* Create a free account on EnableX  [https://portal.enablex.io/cpaas/trial-sign-up/] 
+* Create a free account on EnableX  [https://www.enablex.io/free-trial/] 
 * Create your Project
 * Get the App ID and App Key generated against the Project
 
 
 #### 1.1.2 Requirement
 
-* Check your browser compatibility with EnableX [https://developer.enablex.io/video/browser-compatibility-of-enablex-video/]
-* Download latest copy of Web SDK (EnxRtc.js) [https://developer.enablex.io/wp-content/uploads/EnxRtc.js.v1.9.3.zip?ver=1.9.3] and replace src/lib/EnxRtc.js 
+* Check your browser compatibility with EnableX [https://developer.enablex.io/docs/quickstart/video/browser-compatibility/index/]
+* Download latest copy of Web SDK (EnxRtc.js) [https://developer.enablex.io/downloads/EnxRtc.js.v2.3.30.zip] and replace src/lib/EnxRtc.js 
 * Install all project modules. Run `npm install` 
 
 #### 1.1.3 SSL Certificate 
@@ -50,7 +50,7 @@ Use a valid SSL Certificate for your Domain and use it to configure your Web Ser
 ## 2. Trial
 
 Try a quick Video Call: https://try.enablex.io/ 
-Sign up for a free trial https://portal.enablex.io/cpaas/trial-sign-up/
+Sign up for a free trial https://www.enablex.io/free-trial/
 
 
 ## 3 Installation
@@ -69,12 +69,14 @@ are to be used as Username and Password respectively to pass as HTTP Basic Authe
 
 For this application, the following Server API calls are used:
 
-- https://developer.vcloudx.com/video-api/server-api/rooms-route/#create-room - To create a room
-- https://developer.vcloudx.com/video-api/server-api/rooms-route/#get-room-info - To get information of the given Room
-- https://developer.vcloudx.com/video-api/server-api/rooms-route/#create-token - To create Token for the given Room
+- https://developer.enablex.io/docs/references/apis/video-api/content/api-routes/#create-a-room - To create a room
+- https://developer.enablex.io/docs/references/apis/video-api/content/api-routes/#get-a-list-of-rooms - To get list of Rooms
+- https://developer.enablex.io/docs/references/apis/video-api/content/api-routes/#get-room-information - To get information of the given Room
+- https://developer.enablex.io/docs/references/apis/video-api/content/api-routes/#create-a-token - To create Token for the given Room
+
 
 To know more about Server API, go to:
-https://developer.vcloudx.com/video-api/server-api/
+https://developer.enablex.io/docs/references/apis/video-api/index/
 
 
 ## 5 Client API
@@ -82,4 +84,4 @@ https://developer.vcloudx.com/video-api/server-api/
 Client End Point Application uses Web Toolkit EnxRtc.js to communicate with EnableX Servers to initiate and manage RTC Communications.
 
 To know more about Client API, go to:
-https://developer.enablex.io/video-api/client-api/
+https://developer.enablex.io/docs/references/sdks/video-sdk/web-sdk/index/
